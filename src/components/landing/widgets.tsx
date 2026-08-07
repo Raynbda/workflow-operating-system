@@ -223,14 +223,16 @@ export function RoiCalculator() {
   );
 }
 
-const beforeRows = [
+type Row = [string, string, string];
+
+const beforeRows: Row[] = [
   ["00:00 - 00:15", "Boot up, hunting the desktop and Downloads for the client brief", "Disorganized storage"],
   ["00:15 - 00:30", "Opened the editor, copy-pasting text, switching to Slack and YouTube", "Context switching"],
   ["00:30 - 00:45", "Rebuilding transitions and title cards from scratch — again", "No templates"],
   ["00:45 - 01:00", "Troubleshooting an export error across 15 forum tabs", "No resource library"],
 ];
 
-const afterRows = [
+const afterRows: Row[] = [
   ["00:00 - 00:15", "Project template creates the folder tree, naming, and workspace in one step", "Zero decision friction"],
   ["00:15 - 00:30", "Operating manual says exactly where the brief lives; snippets expand standard text", "Decisions pre-made"],
   ["00:30 - 00:45", "Prebuilt title, transition, and asset library applied in one click", "Reusable assets"],
