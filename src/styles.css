@@ -182,3 +182,12 @@
     color: var(--color-foreground);
   }
 }
+
+@utility bg-grid {
+  background-image: radial-gradient(color-mix(in oklab, var(--color-border) 90%, transparent) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@utility range-brand {
+  accent-color: var(--color-primary);
+}
