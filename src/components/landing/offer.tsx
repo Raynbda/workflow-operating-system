@@ -1,54 +1,32 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Check, ChevronDown, ShieldCheck } from "lucide-react";
 
 const tiers = [
   {
-    name: "Workflow Audit",
-    blurb: "Send a recording of real work; get the diagnosis plus your first reusable assets.",
-    price: "$150",
-    features: [
-      "15-minute increment Workflow Audit",
-      "Ranked list of your highest-ROI fixes",
-      "Starter template pack for your most repeated project",
-      "Personal Resource Library: cheat sheets & shortcut guides",
-    ],
-    cta: "Get the audit",
-  },
-  {
-    name: "System Blueprint",
-    blurb: "The audit plus the written handbook that removes daily decisions.",
-    price: "$250",
-    features: [
-      "Everything in the Workflow Audit",
-      "Personal Operating Manual (files, ideas, tasks, email, desktop)",
-      "Digital Workspace Redesign plan",
-      "1:1 strategy call to walk through the system",
-    ],
-    cta: "Get the blueprint",
-  },
-  {
-    name: "Personal Workflow System",
-    blurb: "Live shadowing plus the full build — all seven deliverables, handed over.",
+    name: "Done With You",
+    blurb: "I design the setup and give you a step-by-step plan. You put it in place.",
     price: "$500",
     featured: true,
     features: [
-      "Live 1:1 shadowing session of your real work",
-      "Full Personal Operating Manual + Workspace Redesign",
-      "Workflow Templatization pack: project, app, folder & doc templates",
-      "App Optimization, Custom Toolkit & Resource Library",
-      "2 days/week guidance for 3 weeks + Visibly Faster guarantee",
+      "I study your recording and your answers in detail",
+      "A personalised video walking through what to change and why",
+      "A written, step-by-step plan you can follow at your own pace",
+      "The right tools, shortcuts and settings for your work",
+      "Templates and a clear place for your files, notes and tasks",
     ],
-    cta: "Build my system",
+    cta: "Start with Done With You",
   },
   {
     name: "Done For You",
-    blurb: "I build and install the entire system on your machine, in phases.",
-    price: "$779",
+    blurb: "I set it all up on your machine, then show you how to use it.",
+    price: "$1,000",
     features: [
-      "Everything in the Personal Workflow System",
-      "White-glove build: templates and folders created for you",
-      "Phased rollout, unlocked as each step is in real use",
-      "Curated software stack installed and configured",
+      "Everything in Done With You",
+      "I build the folders, templates and layouts for you",
+      "Your apps installed, configured and set up around your work",
+      "Rolled out in stages, so nothing breaks your current work",
+      "A handover session so you actually use it",
     ],
     cta: "Get it done for me",
   },
@@ -56,24 +34,24 @@ const tiers = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
+    <section id="pricing" className="mx-auto max-w-5xl px-4 py-24 sm:px-6">
       <div className="mx-auto mb-16 max-w-2xl text-center">
         <span className="text-xs font-extrabold uppercase tracking-widest text-primary">
-          Offer stack
+          Pricing
         </span>
         <h2 className="mt-2 text-3xl font-extrabold text-foreground sm:text-4xl">
-          Choose How Much Of The System You Want Built
+          Two ways to work together
         </h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          Every tier ends with assets you keep — not a list of recommendations.
+          Not sure which one? Fill in the form and I'll recommend one for you.
         </p>
       </div>
 
-      <div className="grid items-stretch gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid items-stretch gap-8 md:grid-cols-2">
         {tiers.map((t) => (
           <div
             key={t.name}
-            className={`relative flex flex-col justify-between rounded-2xl border p-6 transition-all ${
+            className={`relative flex flex-col justify-between rounded-2xl border p-7 transition-all ${
               t.featured
                 ? "border-2 border-primary bg-card shadow-xl"
                 : "border-border bg-card hover:shadow-lg"
@@ -86,7 +64,7 @@ export function Pricing() {
             )}
             <div>
               <h3 className="mt-1 mb-1 text-lg font-bold text-foreground">{t.name}</h3>
-              <p className="mb-4 min-h-[48px] text-xs text-muted-foreground">{t.blurb}</p>
+              <p className="mb-4 min-h-[40px] text-xs text-muted-foreground">{t.blurb}</p>
               <div className="mb-6">
                 <span
                   className={`text-4xl font-extrabold ${t.featured ? "text-primary" : "text-foreground"}`}
@@ -103,8 +81,8 @@ export function Pricing() {
                 ))}
               </ul>
             </div>
-            <a
-              href="#contact"
+            <Link
+              to="/apply"
               className={`w-full rounded-xl px-4 py-3 text-center text-sm font-bold transition-all ${
                 t.featured
                   ? "bg-primary text-primary-foreground shadow-md hover:bg-primary-strong"
@@ -112,7 +90,7 @@ export function Pricing() {
               }`}
             >
               {t.cta}
-            </a>
+            </Link>
           </div>
         ))}
       </div>
@@ -129,19 +107,18 @@ export function Guarantee() {
             <ShieldCheck className="h-9 w-9" />
           </div>
           <h2 className="mb-4 text-2xl font-extrabold text-foreground sm:text-3xl">
-            The "Visibly Faster" Money-Back Guarantee
+            The "visibly faster" money-back guarantee
           </h2>
           <p className="mx-auto mb-6 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Take the $500 Personal Workflow System or the $779 Done For You build. If you aren't
-            visibly faster, noticeably more organized, and no longer starting projects from a blank
-            page by the end of our work together...
+            If you aren't visibly faster, clearly more organised, and no longer starting things from
+            a blank page by the end of our work together...
           </p>
           <div className="mb-4 inline-block rounded-xl border border-primary/25 bg-primary-soft px-6 py-3 text-sm font-bold text-primary sm:text-base">
-            I issue a full 100% refund. Zero questions asked.
+            You get a full refund. No questions asked.
           </div>
           <p className="text-xs text-muted-foreground">
-            Recording privacy note: include everything in your screen recording, even distractions.
-            Hide any personal or financial data — I only need to see how you work.
+            About the recording: include everything, even the distractions. Just hide anything
+            personal or financial — I only need to see how you work.
           </p>
         </div>
       </div>
@@ -151,28 +128,28 @@ export function Guarantee() {
 
 const faqs = [
   [
-    "What exactly do I walk away with?",
-    "Files you own: a Workflow Audit, a Personal Operating Manual, a template pack for your recurring projects, a workspace layout, an app optimization guide, a curated software stack, and a personal resource library. It's a system, not a call recording.",
+    "What do I actually get?",
+    "A personalised video plus a written plan: faster ways to do your daily tasks, the tools worth using, a clear place for your files, notes and tasks, and templates for the things you keep redoing. With Done For You, I also set it all up on your machine.",
   ],
   [
-    "How does the recording review work?",
-    "You record your screen during a real project from start to finish using OBS or Loom. Include everything — even breaks or distractions (hide anything private). I analyze the footage in 15-minute increments to map exactly where time is lost and what you rebuild from scratch.",
+    "Why do you need a screen recording?",
+    "Because most friction is habitual — you've stopped noticing it. Two or three minutes of normal work shows me more than an hour of conversation. Hide anything private; I only need to see how you work.",
   ],
   [
-    "What does 'templatization' actually mean for my work?",
-    "I look for every task that starts from a blank page — a video edit, a client doc, a project folder, a recurring email — and turn it into a template, checklist, or SOP you reuse. Most future projects then begin 30–80% finished.",
+    "Do I have to get on a call?",
+    "No. Everything runs through the form, your recording, and video replies. If you want a call, we can do one, but nothing depends on it.",
   ],
   [
     "Do I need to buy expensive software?",
-    "No. The stack prioritizes free, open-source, and built-in tools. If a paid app is genuinely better, I say why and give you a free alternative with the trade-offs.",
+    "No. I start with free, open-source and built-in tools. If a paid app is genuinely better, I tell you why and give you a free alternative too.",
   ],
   [
-    "What if I'm not comfortable with live 1:1 calls?",
-    "Take the $150 audit or the $779 Done For You build — both run asynchronously through structured video reports and step-by-step handoffs.",
+    "How fast do you reply?",
+    "Your personalised video and written plan land in your inbox within 48 hours of your submission.",
   ],
   [
     "Windows 10 or Windows 11?",
-    "Both. The system is designed on Windows 11, but the workspace architecture, templates, manual, and shortcuts apply equally to Windows 10.",
+    "Both. Most of it also applies if you use a Mac, since the thinking matters more than the operating system.",
   ],
 ];
 
@@ -184,9 +161,7 @@ export function Faq() {
         <span className="text-xs font-extrabold uppercase tracking-widest text-primary">
           Questions
         </span>
-        <h2 className="mt-2 text-3xl font-extrabold text-foreground">
-          Frequently Asked Questions
-        </h2>
+        <h2 className="mt-2 text-3xl font-extrabold text-foreground">Frequently asked questions</h2>
       </div>
       <div className="space-y-4">
         {faqs.map(([q, a], i) => (
@@ -217,21 +192,21 @@ export function Faq() {
 
 export function FinalCta() {
   return (
-    <section id="contact" className="border-t border-border bg-ink py-20 text-ink-foreground">
+    <section className="border-t border-border bg-ink py-20 text-ink-foreground">
       <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
         <h2 className="text-3xl font-extrabold sm:text-4xl">
-          Stop paying for advice. Start owning a system.
+          Let's make your computer work the way you wish it did.
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-sm text-ink-muted">
-          Tell me how you work and which projects keep starting from scratch. I'll come back with
-          the exact system I'd build for you.
+          Answer a few questions about how you work. You'll see your friction score right away, and
+          your personalised plan follows within 48 hours.
         </p>
-        <a
-          href="mailto:hello@workflowsystems.co?subject=Personal%20Workflow%20System"
+        <Link
+          to="/apply"
           className="mt-8 inline-block rounded-xl bg-primary px-8 py-4 text-base font-bold text-primary-foreground transition-all hover:bg-primary-strong"
         >
-          Claim a client slot
-        </a>
+          Get My Digital Workspace Audit
+        </Link>
       </div>
     </section>
   );
