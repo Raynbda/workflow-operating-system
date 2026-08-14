@@ -1,15 +1,15 @@
-# Simpler offer, proof first, and a real intake form
+# A Simpler offer, proof first, and a real intake form
 
-Rewrite the page in plain language around one promise — "I make your computer work the way you wish it did" — cut it down to two prices, move proof to the top, and add the intake questionnaire with an instant Friction Score.
+Rewrite the page in plain language around one promise — I look at how you actually work, find what’s slowing you down, and fix it." — cut it down to two prices, move proof to the top, and add the intake questionnaire with an instant Friction Score.
 
 ## New page order
 
 1. Announcement bar + nav (links: Proof, What you get, How it works, Pricing, FAQ)
-2. **Hero** — headline: "I make your computer work the way you wish it did." Sub: "I look at how you actually work, find what's slowing you down, and build you a simpler, faster way to get things done." One primary button: **Get your free Workflow Friction Score** (opens the form). Secondary link: See what you get.
-3. **Proof (moved to top)** — the "Who builds it" block: 3+ years of technical Windows content, 100+ tools tested, 20 → 80 WPM, 2,500+ curated bookmarks, plus the four judgment principles, in simpler wording.
+2. **Hero** — headline: "**Get Your Digital Life Together"** Sub: "I look at how you work, what tools you use, and where you’re wasting time, then show you exactly what to change to make work faster, easier, and more focused." One primary button: **Get My Digital Workspace Audit** (opens the form). Secondary link: See what you get.
+3. **Proof (moved to top)** — the "Who builds it" block: 3+ years of technical Windows content, 100+ tools tested, 20 → 80 WPM, 2,500+ curated bookmarks, 3000+ Notes, plus the four judgment principles, in simpler wording.
 4. **Before / After** — two columns using the exact quotes:
-   - Before: "Where did I put that? There must be a faster way. Which app should I use? I know I already made this. Why does everything take so long?"
-   - After: "I know where everything goes. I know how to do things quickly. My tools work together. And I can actually focus on my work."
+  - Before: "Where did I put that? There must be a faster way. Which app should I use? I know I already made this. Why does everything take so long?"
+  - After: "I know where everything goes. I know how to do things quickly. My tools work together. And I can actually focus on my work."
 5. **"You'll get"** — 8 plain-language cards: faster ways to work, better tools, a cleaner system, easy to find everything, more reuse, less mental clutter, a smoother workflow, a setup built for you.
 6. **Problems I solve** — short list in the user's own words ("There must be a faster way", "I know this app can do it but not how", "I'm doing the same things over and over", "I know I have this somewhere", "I've already made this but I'm making it again", "Too much stuff everywhere", "I can't keep all of this in my head", "Every project starts from zero"). Secondary ones phrased softly: moving between tools, repeated small decisions, picking up where you left off, every tool having a clear job.
 7. **Who it's for** — tabbed strip (Video editor, Content creator, Graphic designer, Writer, Videographer) showing that profession's problem list and one-line solution.
@@ -42,3 +42,5 @@ Only name, email and the friction questions are required; everything else can be
 - Reuse the existing design tokens in `src/styles.css` — no new colors. Delete `AuditPreview` and `FrictionQuiz` from `widgets.tsx`, keep `RoiCalculator`.
 - Section components split under `src/components/landing/` and `src/components/apply/`; the profession question sets live in one shared data file so the landing tabs and the form stay in sync.
 - Payment link is a placeholder until you give me the real checkout URL.
+
+Payment URL: [https://link.payoneer.com/Token?t=2DC993AF112A411EB9EF0E95051EBA3F&src=pl](https://link.payoneer.com/Token?t=2DC993AF112A411EB9EF0E95051EBA3F&src=pl)
