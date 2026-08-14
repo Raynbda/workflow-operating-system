@@ -14,7 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      audit_submissions: {
+        Row: {
+          answers: Json
+          created_at: string
+          email: string
+          friction_score: number
+          id: string
+          name: string
+          preferred_tier: string | null
+          profession: string | null
+          recording_link: string | null
+          tools: string[]
+          voice_note_link: string | null
+        }
+        Insert: {
+          answers?: Json
+          created_at?: string
+          email: string
+          friction_score?: number
+          id?: string
+          name: string
+          preferred_tier?: string | null
+          profession?: string | null
+          recording_link?: string | null
+          tools?: string[]
+          voice_note_link?: string | null
+        }
+        Update: {
+          answers?: Json
+          created_at?: string
+          email?: string
+          friction_score?: number
+          id?: string
+          name?: string
+          preferred_tier?: string | null
+          profession?: string | null
+          recording_link?: string | null
+          tools?: string[]
+          voice_note_link?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
