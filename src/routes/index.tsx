@@ -1,18 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { AnnouncementBar, Footer, Hero, Nav } from "@/components/landing/site-chrome";
-import { Positioning, SystemDeliverables } from "@/components/landing/system-sections";
 import {
-  Authority,
-  Process,
-  TemplatizationSpotlight,
-} from "@/components/landing/templatization-process";
-import { AuditPreview, FrictionQuiz, RoiCalculator } from "@/components/landing/widgets";
+  BeforeAfter,
+  Problems,
+  Proof,
+  WhatYouGet,
+  WhoItsFor,
+} from "@/components/landing/system-sections";
+import { Process } from "@/components/landing/templatization-process";
+import { RoiCalculator } from "@/components/landing/widgets";
 import { Faq, FinalCta, Guarantee, Pricing } from "@/components/landing/offer";
 
-const title = "Workflow Systems Design — A Complete Operating System For Your Work";
+const title = "Get Your Digital Life Together — Personal Workflow Audit";
 const description =
-  "I analyze how you work, remove what slows you down, and hand you a Personal Workflow System: operating manual, reusable templates, workspace redesign and a curated toolkit.";
+  "I look at how you work, what tools you use, and where you're wasting time, then show you exactly what to change to make work faster, easier and more focused.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -35,14 +37,13 @@ function Index() {
       <Nav />
       <main>
         <Hero />
-        <Positioning />
-        <SystemDeliverables />
-        <TemplatizationSpotlight />
-        <FrictionQuiz />
+        <Proof />
+        <BeforeAfter />
+        <WhatYouGet />
+        <Problems />
+        <WhoItsFor />
         <RoiCalculator />
-        <AuditPreview />
         <Process />
-        <Authority />
         <Pricing />
         <Guarantee />
         <Faq />
