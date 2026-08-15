@@ -19,10 +19,28 @@ export type SubmissionInput = z.input<typeof submissionSchema>;
 export const submitAudit = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => submissionSchema.parse(data))
   .handler(async ({ data }) => {
-    const url = process.env["VITE_SUPABASE_URL"]!;
-    const key = process.env["VITE_SUPABASE_PUBLISHABLE_KEY"]!;
+    const url = process.env["SUPABASE_URL"]!;
+    const key = process.env["SUPABASE_PUBLISHABLE_KEY"]!;
+
+    // New Supabase API keys are opaque strings, not JWTs. PostgREST expects
+    // them as the apikey header, not as a Bearer token.
     const supabase = createClient(url, key, {
       auth: { persistSession: false, autoRefreshToken: false },
+      global: {
+        fetch: (input, init) => {
+          const headers = new Headers(
+            typeof Request !== "undefined" && input instanceof Request ? input.headers : undefined,
+          );
+          if (init?.headers) {
+            new Headers(init.headers).forEach((value, key) => headers.set(key, value));
+          }
+          if (key.startsWith("sb_") && headers.get("Authorization") === `Bearer ${key}`) {
+            headers.delete("Authorization");
+          }
+          headers.set("apikey", key);
+          return fetch(input, { ...init, headers });
+        },
+      },
     });
 
     const { error } = await supabase.from("audit_submissions").insert({
